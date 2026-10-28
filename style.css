@@ -83,6 +83,16 @@ body {
   text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
+.brush-yellow {
+  color: #facc15;
+  font-family: var(--fonte-tag);
+  color: var(--cor-roxo);
+  font-size: 1.25em;
+  font-weight: normal;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+
 /* =========================================================
    4. BOTÕES E BADGES (Usando LEMON MILK e Tritopani)
    ========================================================= */
@@ -728,6 +738,7 @@ body {
     width: 54px !important;
     height: 54px !important;
   }
+  
 }
 /* =========================================================
    ESTILOS DOS FLIP CARDS (ghostly.rec)
