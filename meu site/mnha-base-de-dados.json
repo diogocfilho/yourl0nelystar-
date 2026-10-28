@@ -1,0 +1,32 @@
+[
+  {
+    "pergunta": "O que é o site yourl0nelystar?",
+    "keywords": ["sobre", "o que e", "yourl0nelystar", "projeto", "site", "plataforma"],
+    "resposta": "O **yourl0nelystar** (disponível em `yourl0nelystar.onrender.com`) é a plataforma oficial do projeto **yourl0nelystar**, reunindo o acervo de áudios, mídias, artes e links da comunidade."
+  },
+  {
+    "pergunta": "Por que o site às vezes demora para carregar no primeiro acesso?",
+    "keywords": ["demora", "carregar", "lento", "render", "servidor", "sleep", "offline", "esperar"],
+    "resposta": "Por estar hospedado na plataforma **Render (onrender.com)**, a aplicação entra em modo de repouso (*sleep mode*) após períodos sem acesso. O primeiro carregamento pode levar de **30 a 50 segundos** até o servidor reiniciar."
+  },
+  {
+    "pergunta": "Como faço para criar uma conta ou fazer login?",
+    "keywords": ["conta", "cadastrar", "login", "entrar", "registro", "perfil", "acesso"],
+    "resposta": "Para acessar as funções restritas ou o seu perfil, clique no botão **'Entrar'** ou **'Criar Conta'** no menu principal de `yourl0nelystar.onrender.com` e insira suas credenciais."
+  },
+  {
+    "pergunta": "Como posso redefinir a minha senha?",
+    "keywords": ["senha", "redefinir", "esqueci", "trocar", "acesso", "recuperar"],
+    "resposta": "Na tela de login do site, clique em **'Esqueci a minha senha'** e insira o e-mail cadastrado para receber as instruções de recuperação."
+  },
+  {
+    "pergunta": "Onde posso ouvir ou visualizar as mídias do yourl0nelystar?",
+    "keywords": ["musicas", "artes", "midia", "player", "conteudo", "ouvir", "acervo"],
+    "resposta": "Você pode navegar pelas seções **'Player'**, **'Mídias'** e **'Galeria'** diretamente no menu do site para acessar o conteúdo de áudio e arte."
+  },
+  {
+    "pergunta": "Como entrar em contato com o suporte ou idealizador do projeto?",
+    "keywords": ["contato", "suporte", "feedback", "falar", "ajuda", "duvidas", "email"],
+    "resposta": "Para dúvidas, bugs ou feedbacks sobre o site, acesse a página de **'Contato'** ou utilize os links de redes sociais disponíveis no rodapé da página."
+  }
+]
