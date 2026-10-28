@@ -609,4 +609,298 @@ body {
   .btn-cookies {
     width: 100%;
   }
+
+}
+ /* =========================================================
+10. CHATBOT / CAIXA DE MENSAGENS — TEMA GHOSTLY.REC
+   ========================================================= */
+#faq-chatbot-widget {
+  font-family: var(--fonte-texto, Inter, sans-serif) !important;
+}
+
+#faq-toggle-btn,
+.faq-header {
+  background: linear-gradient(135deg, var(--cor-roxo, #a855f7), #6b21a8) !important;
+  color: #fff !important;
+}
+
+#faq-toggle-btn {
+  box-shadow: 0 4px 22px rgba(168, 85, 247, .35) !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
+}
+
+#faq-chat-window {
+  background: var(--bg-card, #13131a) !important;
+  color: var(--cor-texto, #fff) !important;
+  border: 1px solid rgba(168, 85, 247, .42) !important;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .55) !important;
+}
+
+.faq-header {
+  border-bottom: 1px solid rgba(255, 255, 255, .1) !important;
+}
+
+.faq-header h3 {
+  font-family: var(--fonte-titulo, Inter, sans-serif) !important;
+  letter-spacing: .03em !important;
+}
+
+#faq-messages {
+  background: var(--bg-site, #0a0a0d) !important;
+}
+
+.faq-msg.bot {
+  background: #171720 !important;
+  color: #f3f4f6 !important;
+  border-color: rgba(255, 255, 255, .12) !important;
+}
+
+.faq-msg.user {
+  background: var(--cor-roxo, #a855f7) !important;
+  color: #fff !important;
+}
+
+.faq-msg.system-info {
+  background: rgba(234, 179, 8, .12) !important;
+  color: #facc15 !important;
+}
+
+.faq-chip {
+  background: rgba(168, 85, 247, .12) !important;
+  color: #d8b4fe !important;
+  border-color: rgba(168, 85, 247, .5) !important;
+}
+
+.faq-chip:hover {
+  background: rgba(168, 85, 247, .25) !important;
+}
+
+.faq-footer {
+  background: var(--bg-card, #13131a) !important;
+  border-color: rgba(255, 255, 255, .12) !important;
+}
+
+#faq-input {
+  background: var(--bg-site, #0a0a0d) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, .2) !important;
+}
+
+#faq-input::placeholder {
+  color: var(--cor-subtexto, #9ca3af) !important;
+}
+
+#faq-input:focus {
+  border-color: var(--cor-roxo, #a855f7) !important;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, .18) !important;
+}
+
+#faq-send-btn {
+  background: var(--cor-amarelo, #eab308) !important;
+  color: #0a0a0d !important;
+}
+
+#faq-send-btn svg {
+  fill: #0a0a0d !important;
+}
+
+.faq-icon-btn {
+  color: #fff !important;
+}
+
+/* Adaptação da caixa para celulares */
+@media (max-width: 480px) {
+  #faq-chatbot-widget {
+    right: 12px !important;
+    bottom: 12px !important;
+  }
+
+  #faq-chat-window {
+    right: 12px !important;
+    bottom: 82px !important;
+    width: calc(100vw - 24px) !important;
+    max-width: none !important;
+    height: min(72dvh, 560px) !important;
+    max-height: calc(100dvh - 100px) !important;
+  }
+
+  #faq-toggle-btn {
+    width: 54px !important;
+    height: 54px !important;
+  }
+}
+/* =========================================================
+   ESTILOS DOS FLIP CARDS (ghostly.rec)
+   ========================================================= */
+
+.flip-section {
+  padding: 80px 0;
+  background-color: #0b0c10;
+  color: #ffffff;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.section-desc {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+}
+
+/* Container Grid dos Flip Cards */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Estrutura Principal do Flip Card */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 380px;
+  perspective: 1000px; /* Efeito 3D de profundidade */
+}
+
+/* Container Interno que Gira */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Efeito de Giro ao Passar o Mouse ou Focar */
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Faces do Card (Frente e Verso) */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  padding: 30px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; /* Esconde a parte de trás quando girado */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+/* --- FRENTE DO CARD --- */
+.flip-card-front {
+  background: #121318;
+  color: #ffffff;
+}
+
+.flip-card-front.highlight {
+  border-color: rgba(250, 204, 21, 0.4); /* Destaque em amarelo */
+}
+
+.card-badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: #7c3aed; /* Roxo principal */
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.card-badge.yellow {
+  background-color: #facc15; /* Amarelo urbano */
+  color: #000000;
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  color: #7c3aed;
+  margin: 15px 0 10px 0;
+}
+
+.flip-card-front h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.flip-card-front p {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  color: #facc15;
+  font-weight: 600;
+  letter-spacing: 1px;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+/* --- VERSO DO CARD --- */
+.flip-card-back {
+  background: linear-gradient(145deg, #18132b, #0d091a);
+  color: #ffffff;
+  transform: rotateY(180deg);
+  border-color: #7c3aed;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.25);
+}
+
+.flip-card-back h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #facc15;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.flip-card-back ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #d1d5db;
+  margin-bottom: 12px;
+}
+
+.flip-card-back ul li svg {
+  width: 18px;
+  height: 18px;
+  color: #7c3aed;
+  flex-shrink: 0;
+}
+
+.flip-card-back .btn {
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
 }
