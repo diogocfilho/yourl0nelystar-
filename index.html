@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ghostly.rec - O Som Urbano e Cru da Nova Cena</title>
+  <title>ghostly.rec | yourl0nelystar - O Som Urbano e Cru da Nova Cena</title>
 
   <!-- Google Font Inter para o corpo do texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,20 +29,39 @@
       <a href="#" class="logo">
         <i data-lucide="ghost"></i>
         <h2 class="section-title">
-          <span class="brush-yellow">yourl0nelystar</span>
+          <span class="brush-purple">yourl0nelystar</span>
         </h2>
       </a>
 
       <nav class="nav-links">
         <a href="#hero" class="active">HOME</a>
         <a href="#manifesto">SOBRE MIM</a>
-        <a href="#">Explorar</a>
-        <a href="#">BOOKING</a>
+        <a href="#servicos">EXPLORAR</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="#" class="btn btn-white btn-sm">OUVIR AGORA</a>
-        <a href="#" class="btn btn-dark-outline btn-sm">BOOKING</a>
+        <!-- Botão que abre a janela modal -->
+        <button type="button" id="abrir-login" class="btn-login">Entrar</button>
+
+        <!-- Janela Modal oculta por padrão -->
+        <dialog id="modal-login" class="modal">
+          <div class="modal-conteudo">
+            <button type="button" id="fechar-login" class="btn-fechar" aria-label="Fechar">&times;</button>
+            <h2>Fazer Login</h2>
+            
+            <form id="form-login">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" required placeholder="seu@email.com">
+
+              <label for="senha">Senha</label>
+              <input type="password" id="senha" required placeholder="••••••••">
+
+              <button type="submit" class="btn-login">Acessar</button>
+            </form>
+          </div>
+        </dialog>
+
+        <a href="#servicos" class="btn btn-dark-outline btn-sm">cadastrar</a>
       </div>
 
     </div>
@@ -60,7 +79,7 @@
           <div class="badge-yellow">
             <span>▲ ESSÊNCIA DO BEAT</span>
             <span>//</span>
-            <span>NOVA ERA URBAN</span>
+            <span>NOVA ERA URBANA</span>
           </div>
 
           <!-- Título -->
@@ -75,10 +94,10 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#" class="btn btn-white">
+            <a href="#servicos" class="btn btn-white">
               <i data-lucide="play-circle"></i> OUVIR LANÇAMENTOS
             </a>
-            <a href="#" class="btn btn-purple">
+            <a href="#servicos" class="btn btn-purple-outline">
               <i data-lucide="zap"></i> CONTRATAR BEAT
             </a>
           </div>
@@ -98,10 +117,10 @@
 
         </div>
 
-        <!-- ÁREA DO SLIDER / PLAYER DO EKKO TRUE DAMAGE -->
-        <iframe data-testid="embed-iframe" style="border-radius:12px"
+        <!-- ÁREA DO PLAYER DO SPOTIFY -->
+        <iframe data-testid="embed-iframe" style="border-radius:12px; background-color:#13131a;"
           src="https://open.spotify.com/embed/artist/1zhaD6lZ7mFx7VBYUe2V0F?utm_source=generator&si=3b410e9bb0cb4876"
-          width="80%" height="352" frameBorder="0" allowfullscreen=""
+          width="100%" height="352" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
       </div>
@@ -123,8 +142,9 @@
           </h2>
 
           <p class="manifesto-p">
-            Sem um conceito genérico ou fórmulas prontas, o <strong>ghostly.rec</strong> nasceu de uma necessidade
-            sólida e pura: dar voz à música urbana com peso, identidade e visão sem concessões.
+            Sem um conceito genérico ou fórmulas prontas, o selo <strong>ghostly.rec</strong> — projeto autoral de
+            <strong>yourl0nelystar</strong> — nasceu de uma necessidade sólida e pura: dar voz à música urbana com peso,
+            identidade e visão sem concessões.
           </p>
 
           <p class="manifesto-p">
@@ -183,7 +203,7 @@
               </div>
               <div class="poster-overlay">
                 <div class="quote-box">
-                  <span class="quote-tag">MANIFESTO // ESSÊNCIA & RITMO URBAN</span>
+                  <span class="quote-tag">MANIFESTO // ESSÊNCIA & RITMO URBANO</span>
                   <p class="quote-text">
                     "O SANGUE NEGRO É A ESSÊNCIA URBANA. NÃO SE LUTE COM FERVOR, MAS SIM VIVA PELA RUA."
                   </p>
@@ -197,86 +217,85 @@
     </section>
 
     <!-- =========================================================
-     4. SEÇÃO FLIP CARDS (SERVIÇOS / BEATS)
-     ========================================================= -->
-<section id="servicos" class="flip-section">
-  <div class="container">
+         4. SEÇÃO FLIP CARDS (SERVIÇOS / BEATS)
+         ========================================================= -->
+    <section id="servicos" class="flip-section">
+      <div class="container">
 
-    <div class="section-header">
-      <span class="sub-label">CATÁLOGO & PRODUÇÃO</span>
-      <h2 class="section-title">
-        EXPLORE O <span class="brush-purple">NOSSO SOM</span>
-      </h2>
-    </div>
+        <div class="section-header">
+          <span class="sub-label">CATÁLOGO & PRODUÇÃO</span>
+          <h2 class="section-title">
+            EXPLORE O <span class="brush-purple">NOSSO SOM</span>
+          </h2>
+        </div>
 
-    <div class="flip-grid">
+        <div class="flip-grid">
 
-      <!-- CARD 1: PRÉVIAS / BEATS -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <div class="card-badge">TRAP / DRILL</div>
-            <i data-lucide="disc" class="card-icon"></i>
-            <h3>Veja previas</h3>
-            <p>Instrumentais 100% autorais e prontos para gravação.</p>
+          <!-- CARD 1: PRÉVIAS / BEATS -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-badge">TRAP / DRILL</div>
+                <i data-lucide="disc" class="card-icon"></i>
+                <h3>Veja Prévias</h3>
+                <p>Instrumentais 100% autorais e prontos para gravação.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>BEATS EXCLUSIVOS</h3>
+                <ul>
+                  <li><i data-lucide="check-circle-2"></i> Stems / Pistas separadas</li>
+                  <li><i data-lucide="check-circle-2"></i> Direitos de reprodução comercial</li>
+                  <li><i data-lucide="check-circle-2"></i> Mix & Master inclusa</li>
+                </ul>
+                <a href="https://soundcloud.com/deadstarz-colletive?ref=instagram&p=a&c=1&si=649e95c0d775495da5033e5be87e2df7&utm_source=instagram&utm_medium=story&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer" class="btn btn-purple btn-sm">OUVIR BEATS</a>
+              </div>
+            </div>
           </div>
-          <div class="flip-card-back">
-            <h3>BEATS EXCLUSIVOS</h3>
-            <ul>
-              <li><i data-lucide="check-circle-2"></i> Stems / Pistas separadas</li>
-              <li><i data-lucide="check-circle-2"></i> Direitos de reprodução comercial</li>
-              <li><i data-lucide="check-circle-2"></i> Mix & Master inclusa</li>
-            </ul>
-            <!-- COLOQUE O LINK DO SEU CATÁLOGO DE BEATS / SOUNDCLOUD / YOUTUBE AQUI -->
-            <a href="https://soundcloud.com/deadstarz-colletive?ref=instagram&p=a&c=1&si=649e95c0d775495da5033e5be87e2df7&utm_source=instagram&utm_medium=story&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer" class="btn btn-purple btn-sm">OUVIR BEATS</a>
+
+          <!-- CARD 2: SPOTIFY -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front highlight">
+                <div class="card-badge yellow">SERVIÇO</div>
+                <i data-lucide="sliders" class="card-icon"></i>
+                <h3>Escute no Spotify</h3>
+                <p>Tratamento analógico e digital para elevar sua voz ao topo.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>OUÇA AGORA</h3>
+                <ul>
+                  <li><i data-lucide="check-circle-2"></i> “Deixe-me compartilhar uma perspectiva diferente da música underground”</li>
+                </ul>
+                <a href="https://open.spotify.com/artist/1zhaD6lZ7mFx7VBYUe2V0F" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-sm">Confira já!!</a>
+              </div>
+            </div>
           </div>
+
+          <!-- CARD 3: REDES SOCIAIS -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-badge">ESTÚDIO</div>
+                <i data-lucide="mic" class="card-icon"></i>
+                <h3>Veja as Redes</h3>
+                <p>Sessões de estúdio presenciais e direção vocal dedicada.</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>SESSÃO NO STUDIO</h3>
+                <ul>
+                  <li><i data-lucide="check-circle-2"></i> Equipamentos high-end</li>
+                  <li><i data-lucide="check-circle-2"></i> Captação acústica tratada</li>
+                  <li><i data-lucide="check-circle-2"></i> Acompanhamento do produtor</li>
+                </ul>
+                <a href="https://www.instagram.com/yourl0nelystar29/" target="_blank" rel="noopener noreferrer" class="btn btn-purple btn-sm">Vá seguir!!</a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- CARD 2: SPOTIFY -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front highlight">
-            <div class="card-badge yellow">SERVIÇO</div>
-            <i data-lucide="sliders" class="card-icon"></i>
-            <h3>Escute no spotify</h3>
-            <p>Tratamento analógico e digital para elevar sua voz ao topo.</p>
-          </div>
-          <div class="flip-card-back">
-            <ul>
-              <li><i data-lucide="check-circle-2"></i> “Deixe-me compartilhar uma perspectiva diferente da musica underground</li>
-            </ul>
-            <!-- LINK DIRETO PARA O SEU PERFIL NO SPOTIFY -->
-            <a href="https://open.spotify.com/artist/1zhaD6lZ7mFx7VBYUe2V0F" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-sm">Confira já!!</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 3: REDES SOCIAIS -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <div class="card-badge">ESTÚDIO</div>
-            <i data-lucide="mic" class="card-icon"></i>
-            <h3>Veja as Redes</h3>
-            <p>Sessões de estúdio presenciais e direção vocal dedicada.</p>
-          </div>
-          <div class="flip-card-back">
-            <h3>SESSÃO NO STUDIO</h3>
-            <ul>
-              <li><i data-lucide="check-circle-2"></i> Equipamentos high-end</li>
-              <li><i data-lucide="check-circle-2"></i> Captação acústica tratada</li>
-              <li><i data-lucide="check-circle-2"></i> Acompanhamento do produtor</li>
-            </ul>
-            <!-- COLOQUE O LINK DO SEU INSTAGRAM / LINKTREE AQUI -->
-            <a href="https://www.instagram.com/yourl0nelystar29/" target="_blank" rel="noopener noreferrer" class="btn btn-purple btn-sm">Vá seguir!!</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
   <!-- Preferências de cookies -->
   <section
@@ -351,8 +370,9 @@
     </div>
   </section>
 
-  <!-- Scripts de Cookies, Ícones e Chatbot -->
+  <!-- Scripts de Cookies, Ícones, Chatbot e Login -->
   <script src="chatbot.js"></script>
+  <script src="script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Renderiza todos os ícones Lucide da página
