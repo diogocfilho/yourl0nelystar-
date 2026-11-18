@@ -36,6 +36,7 @@
   --bg-site: #0a0a0d;
   --bg-card: #13131a;
   --cor-roxo: #a855f7;
+  --cor-roxo-claro: #c084fc;
   --cor-amarelo: #eab308;
   --cor-texto: #ffffff;
   --cor-subtexto: #9ca3af;
@@ -69,6 +70,7 @@ body {
 }
 
 .container {
+  width: 100%;
   max-width: var(--largura-maxima);
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -77,21 +79,19 @@ body {
 /* Destaque em roxo com a fonte aAnotherTag */
 .brush-purple {
   font-family: var(--fonte-tag);
-  color: var(--cor-roxo);
+  color: var(--cor-roxo-claro);
   font-size: 1.25em;
   font-weight: normal;
-  text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  text-shadow: 0 0 16px rgba(192, 132, 252, 0.55);
 }
 
 .brush-yellow {
-  color: #facc15;
   font-family: var(--fonte-tag);
-  color: var(--cor-roxo);
+  color: #facc15;
   font-size: 1.25em;
   font-weight: normal;
-  text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  text-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
 }
-
 
 /* =========================================================
    4. BOTÕES E BADGES (Usando LEMON MILK e Tritopani)
@@ -108,13 +108,15 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, background-color 0.2s;
 }
 
 .btn:hover { opacity: 0.85; }
 
 .btn-white { background: #eab308; color: #000; }
 .btn-purple { background: var(--cor-roxo); color: #ffffff; box-shadow: 0 0 12px rgba(168, 85, 247, 0.4); }
+.btn-purple-outline { background: transparent; color: #ffffff; border: 1px solid var(--cor-roxo); }
+.btn-purple-outline:hover { background: rgba(168, 85, 247, 0.15); }
 .btn-dark-outline { background: transparent; color: #fff; border: 1px solid var(--borda); }
 .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
 
@@ -129,6 +131,106 @@ body {
   font-family: var(--fonte-tritopani);
   font-size: 0.7rem;
   margin-bottom: 1rem;
+}
+
+.btn-login {
+  background-color: var(--cor-roxo);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--raio-borda);
+  padding: 0.45rem 0.95rem;
+  font-family: var(--fonte-titulo);
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efeito ao passar o mouse */
+.btn-login:hover {
+  background-color: #9333ea;
+}
+
+/* Efeito de clique */
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+/* Fundo escuro atrás da janela */
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* Caixa da janela */
+.modal {
+  margin: auto;
+  background-color: var(--bg-card);
+  color: var(--cor-texto);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  border-radius: 10px;
+  padding: 0;
+  width: 90%;
+  max-width: 380px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  font-family: var(--fonte-texto);
+}
+
+.modal-conteudo {
+  padding: 24px;
+  position: relative;
+}
+
+.modal-conteudo h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--cor-subtexto);
+}
+
+.btn-fechar:hover {
+  color: #ffffff;
+}
+
+#form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+#form-login label {
+  font-size: 0.85rem;
+  color: var(--cor-subtexto);
+}
+
+#form-login input {
+  padding: 10px;
+  background-color: var(--bg-site);
+  color: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#form-login input:focus {
+  outline: none;
+  border-color: var(--cor-roxo);
+}
+
+#form-login .btn-login {
+  margin-top: 6px;
+  padding: 12px;
+  font-size: 0.75rem;
 }
 
 /* =========================================================
@@ -160,6 +262,12 @@ body {
   text-decoration: none;
 }
 
+.logo .section-title {
+  font-size: 1.15rem;
+  margin: 0;
+  text-transform: none;
+}
+
 .logo i { color: var(--cor-roxo); }
 
 .nav-links { display: flex; gap: 1.5rem; }
@@ -171,7 +279,11 @@ body {
 }
 .nav-links a.active, .nav-links a:hover { color: #fff; }
 
-.nav-actions { display: flex; gap: 0.5rem; }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 /* =========================================================
    6. HERO SECTION
@@ -182,7 +294,7 @@ body {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
   align-items: center;
 }
@@ -332,7 +444,7 @@ body {
 
 .manifesto-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
   align-items: center;
 }
@@ -362,7 +474,7 @@ body {
 /* Grid das estatísticas (4 cards) */
 .stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
   margin-top: 1.5rem;
 }
@@ -605,7 +717,7 @@ body {
    9. RESPONSIVIDADE
    ========================================================= */
 @media (max-width: 768px) {
-  .hero-grid, .manifesto-grid { grid-template-columns: 1fr; }
+  .hero-grid, .manifesto-grid, .flip-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .hero-title { font-size: 2rem; }
 
@@ -619,10 +731,10 @@ body {
   .btn-cookies {
     width: 100%;
   }
-
 }
- /* =========================================================
-10. CHATBOT / CAIXA DE MENSAGENS — TEMA GHOSTLY.REC
+
+/* =========================================================
+   10. CHATBOT / CAIXA DE MENSAGENS — TEMA GHOSTLY.REC
    ========================================================= */
 #faq-chatbot-widget {
   font-family: var(--fonte-texto, Inter, sans-serif) !important;
@@ -738,9 +850,8 @@ body {
     width: 54px !important;
     height: 54px !important;
   }
-
 }
-  
+
 /* =========================================================
    ESTILOS DOS FLIP CARDS (ghostly.rec)
    ========================================================= */
@@ -762,6 +873,12 @@ body {
   margin: 10px 0;
 }
 
+.logo .section-title {
+  font-size: 1.15rem;
+  margin: 0;
+  text-transform: none;
+}
+
 .section-desc {
   color: #a0a0a0;
   font-size: 0.95rem;
@@ -770,8 +887,14 @@ body {
 /* Container Grid dos Flip Cards */
 .flip-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .flip-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Estrutura Principal do Flip Card */
@@ -779,7 +902,7 @@ body {
   background: transparent;
   width: 100%;
   height: 380px;
-  perspective: 1000px; /* Efeito 3D de profundidade */
+  perspective: 1000px;
 }
 
 /* Container Interno que Gira */
@@ -807,7 +930,7 @@ body {
   border-radius: 16px;
   padding: 30px;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; /* Esconde a parte de trás quando girado */
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -822,7 +945,7 @@ body {
 }
 
 .flip-card-front.highlight {
-  border-color: rgba(250, 204, 21, 0.4); /* Destaque em amarelo */
+  border-color: rgba(250, 204, 21, 0.4);
 }
 
 .card-badge {
@@ -831,13 +954,13 @@ body {
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 4px;
-  background-color: #7c3aed; /* Roxo principal */
+  background-color: #7c3aed;
   color: #ffffff;
   letter-spacing: 1px;
 }
 
 .card-badge.yellow {
-  background-color: #facc15; /* Amarelo urbano */
+  background-color: #facc15;
   color: #000000;
 }
 
